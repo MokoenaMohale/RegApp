@@ -17,6 +17,7 @@ public class RegLogin {
 
 // created main class and imported required libraries
     public static void main(String[] args) {
+        // initialized scanner
         Scanner input = new Scanner(System.in);
         Login authSystem = new Login();
 
