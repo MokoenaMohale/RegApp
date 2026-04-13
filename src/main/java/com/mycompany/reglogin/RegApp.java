@@ -26,14 +26,14 @@ public class Login {
 
     
     public boolean checkPasswordComplexity(String password) {
-        // Must contain: Capital, Number, Special Char, and be at least 8 chars
+        
         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
         return Pattern.compile(regex).matcher(password).matches();
     }
 
     
     public boolean checkPhone(String phone) {
-        // Regex to ensure it starts with +27 or 27
+        
         String phoneRegex = "^(\\+27|27)[0-9]{7,9}$"; 
         return Pattern.compile(phoneRegex).matcher(phone).matches();
     }
