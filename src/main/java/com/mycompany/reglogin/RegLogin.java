@@ -14,13 +14,13 @@ public class RegLogin {
  
 
       
-// Main Application Class (Filename must match this: RegistrationApp.java)
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Login authSystem = new Login();
 
-        // 1. Registration Phase
+        
         System.out.println("--- Register Account ---");
         System.out.print("Enter First Name: ");
         String fName = input.nextLine();
@@ -33,11 +33,11 @@ public class RegLogin {
         System.out.print("Enter SA Phone Number (e.g., +27...): ");
         String phone = input.nextLine();
 
-        // Register the user and get the result message
+        
         String regMessage = authSystem.registerUser(user, pass, phone);
         System.out.println("\n" + regMessage);
 
-        // 2. Login Phase - Only proceeds if registration worked
+        
         if (regMessage.contains("successfully captured")) {
             System.out.println("\n--- Login ---");
             System.out.print("Enter Username: ");
@@ -53,7 +53,7 @@ public class RegLogin {
     }
 }
 
-// Logic Class (Removed 'public' so it can live in the same file as RegistrationApp)
+
 class Login {
     private String username;
     private String password;
@@ -63,13 +63,13 @@ class Login {
     }
 
     public boolean checkPasswordComplexity(String password) {
-        // Must contain: Capital, Number, Special Char, and be at least 8 chars
+        
         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
         return Pattern.compile(regex).matcher(password).matches();
     }
 
     public boolean checkPhone(String phone) {
-        // Regex to ensure it starts with +27 or 27
+       
         String phoneRegex = "^(\\+27|27)[0-9]{7,9}$"; 
         return Pattern.compile(phoneRegex).matcher(phone).matches();
     }
@@ -89,7 +89,7 @@ class Login {
     }
 
     public boolean loginUser(String user, String pass) {
-        // Checks if the entered credentials match the registered ones
+      
         return user.equals(this.username) && pass.equals(this.password);
     }
 

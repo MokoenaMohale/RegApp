@@ -8,7 +8,7 @@ package com.mycompany.reglogin;
  *
  * @author lab_services_student
  */
-import java.util.Scanner; // Required as per your last request
+import java.util.Scanner; 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -19,26 +19,26 @@ public class Login {
     private String username;
     private String password;
 
-    // 1. Username Validation
+   
     public boolean checkUserName(String username) {
         return username.contains("_") && username.length() <= 5;
     }
 
-    // 2. Password Complexity Validation
+    
     public boolean checkPasswordComplexity(String password) {
         // Must contain: Capital, Number, Special Char, and be at least 8 chars
         String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
         return Pattern.compile(regex).matcher(password).matches();
     }
 
-    // 3. Cell Phone Validation (South African International Code)
+    
     public boolean checkPhone(String phone) {
         // Regex to ensure it starts with +27 or 27
         String phoneRegex = "^(\\+27|27)[0-9]{7,9}$"; 
         return Pattern.compile(phoneRegex).matcher(phone).matches();
     }
 
-    // Registration Orchestrator
+    
     public String registerUser(String user, String pass, String phone) {
         if (!checkUserName(user)) {
             return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
@@ -53,12 +53,12 @@ public class Login {
         }
     }
 
-    // Login Verification
+    
     public boolean loginUser(String user, String pass) {
         return user.equals(this.username) && pass.equals(this.password);
     }
 
-    // Authentication Status Message
+    
     public String returnLoginStatus(boolean loggedIn, String fName, String lName) {
         if (loggedIn) {
             return "Welcome " + fName + ", " + lName + " it is great to see you again.";
