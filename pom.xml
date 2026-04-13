@@ -8,18 +8,18 @@
     <build>
     <plugins>
         <plugin>
-            <groupid>org.apache.maven.plugins</groupid>
-            <artifactid>maven-surefire-plugin</artifactid>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
             <version>2.21.0</version>
             <dependencies>
                 <dependency>
-                    <groupid>org.junit.platform</groupid>
-                    <artifactid>junit-platform-surefire-provider</artifactid>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-surefire-provider</artifactId>
                     <version>1.2.0-M1</version>
                 </dependency>
                 <dependency>
-                    <groupid>org.junit.jupiter</groupid>
-                    <artifactid>junit-jupiter-engine</artifactid>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
                     <version>5.2.0-M1</version>
                 </dependency>
             </dependencies>
